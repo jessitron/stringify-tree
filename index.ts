@@ -18,7 +18,8 @@ export function stringifyTree<T>(tn: T, nameFn: (t: T) => string, childrenFn: (t
         });
     }
     function nodeToStrings(tn: T): string[] {
-        const children = [...childrenFn(tn)]; // copy the array
+        const origChildren = childrenFn(tn) || [];
+        const children = [...origChildren]; // copy the array
         if (children.length === 0) {
             return ["─ " + nameFn(tn)];
         }

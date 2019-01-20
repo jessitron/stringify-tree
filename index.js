@@ -18,7 +18,8 @@ function stringifyTree(tn, nameFn, childrenFn) {
         });
     }
     function nodeToStrings(tn) {
-        var children = childrenFn(tn).slice(); // copy the array
+        var origChildren = childrenFn(tn) || [];
+        var children = origChildren.slice(); // copy the array
         if (children.length === 0) {
             return ["─ " + nameFn(tn)];
         }

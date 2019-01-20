@@ -14,6 +14,14 @@ describe("stringify", function () {
         console.log("tree:\n" + result);
         assert_1.default.deepEqual(result, "─ hi");
     });
+    it("treats undefined as empty children", function () {
+        var tree = {
+            name: "hi", children: undefined,
+        };
+        var result = __1.stringifyTree(tree, function (t) { return t.name; }, function (t) { return t.children; });
+        console.log("tree:\n" + result);
+        assert_1.default.deepEqual(result, "─ hi");
+    });
     it("prints a tree with a child", function () {
         var tree = {
             name: "hi", children: [

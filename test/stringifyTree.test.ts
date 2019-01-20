@@ -10,6 +10,15 @@ describe("stringify", () => {
         console.log("tree:\n" + result);
         assert.deepEqual(result, "─ hi");
     });
+    it("treats undefined as empty children", () => {
+        type TN = { name: string, children: TN[] }
+        const tree = {
+            name: "hi", children: undefined,
+        } as unknown as TN;
+        const result = stringifyTree(tree, t => t.name, t => t.children);
+        console.log("tree:\n" + result);
+        assert.deepEqual(result, "─ hi");
+    });
     it("prints a tree with a child", () => {
         const tree = {
             name: "hi", children: [
