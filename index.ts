@@ -9,7 +9,7 @@ import flatten = require("lodash.flatten");
  * @param nameFn how to calculate the name of a tree node
  * @param childrenFn how to get the children of a tree node
  */
-export function stringifyTree<T>(tn: T, nameFn: (t: T) => string, childrenFn: (t: T) => T[]): string {
+export function stringifyTree<T>(tn: T, nameFn: (t: T) => string, childrenFn: (t: T) => T[] | null): string {
 
     function prefixChild(strs: string[], last: boolean): string[] {
         return strs.map((s, i) => {

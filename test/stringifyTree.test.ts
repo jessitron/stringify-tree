@@ -136,3 +136,18 @@ describe("stringify", () => {
   └── Nick`);
     });
 });
+
+describe("compatibility with null child arrays", () => {
+    it("prints one tree", () => {
+        type Tree = {
+            name: string,
+            children: [] | null
+        }
+        const tree = {
+            name: "hi", children: null,
+        };
+        const result = stringifyTree(tree, t => t.name, t => t.children);
+        console.log("tree:\n" + result);
+        assert.deepEqual(result, "─ hi");
+    });
+})
