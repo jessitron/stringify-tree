@@ -7,5 +7,5 @@
  * @param nameFn how to calculate the name of a tree node
  * @param childrenFn how to get the children of a tree node
  */
-export declare function stringifyTree<T>(tn: T, nameFn: (t: T) => string, childrenFn: (t: T) => T[]): string;
+export declare function stringifyTree<T>(tn: T, nameFn: (t: T) => string, childrenFn: (t: T) => T[] | null): string;
 //# sourceMappingURL=index.d.ts.map

@@ -113,4 +113,14 @@ describe("stringify", function () {
         assert_1.default.deepEqual(result, "\u252C Grandmarti\n\u251C\u2500\u252C Cyndi\n\u2502 \u251C\u2500\u252C Jess\n\u2502 \u2502 \u251C\u2500\u2500 Evelyn\n\u2502 \u2502 \u2514\u2500\u2500 Linda\n\u2502 \u251C\u2500\u2500 Josh\n\u2502 \u2514\u2500\u2500 Rachel\n\u251C\u2500\u252C Celia\n\u2502 \u251C\u2500\u2500 Faith\n\u2502 \u2514\u2500\u2500 Ellie\n\u2514\u2500\u252C Cheri\n  \u251C\u2500\u2500 Liz\n  \u2514\u2500\u2500 Nick");
     });
 });
+describe("compatibility with null child arrays", function () {
+    it("prints one tree", function () {
+        var tree = {
+            name: "hi", children: null,
+        };
+        var result = __1.stringifyTree(tree, function (t) { return t.name; }, function (t) { return t.children; });
+        console.log("tree:\n" + result);
+        assert_1.default.deepEqual(result, "─ hi");
+    });
+});
 //# sourceMappingURL=stringifyTree.test.js.map
