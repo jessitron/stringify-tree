@@ -4,10 +4,10 @@
   "description": "Turn a tree structure into an ascii tree",
   "main": "index.js",
   "dependencies": {
-    "lodash.flatten": "^4.4.0"
+    "lodash.flatten": "^4.4.0",
+    "@types/lodash.flatten": "^4.4.4"
   },
   "devDependencies": {
-    "@types/lodash.flatten": "^4.4.4",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.18",
     "mocha": "^5.2.0",
